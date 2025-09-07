@@ -4,7 +4,8 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ServicePage from "./pages/ServicePage";
-
+import ContactPage from "./pages/ContactPage";
+import ShopPages from "./pages/ShopPages";  
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -28,6 +29,11 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/service" element={<ServicePage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route
+          path="/shop"
+          element={<ShopPages products={products} loading={loading} />}
+        />
       </Routes>
     </Router>
   );
