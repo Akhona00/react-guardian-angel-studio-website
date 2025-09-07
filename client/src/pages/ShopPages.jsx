@@ -8,7 +8,7 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 import "./shop.css";
 
-function PaymentHistory({ email }) {
+/* function PaymentHistory({ email }) {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -70,6 +70,7 @@ function PaymentHistory({ email }) {
     </div>
   );
 }
+ */
 
 const STRIPE_PUBLIC_KEY = ""; // <-- Use your Stripe public key
 const stripePromise = loadStripe(STRIPE_PUBLIC_KEY);
@@ -489,7 +490,7 @@ export default function ShopGuardianAngel() {
   }, [notification]);
 
   const handleOrderSuccess = (order) => {
-    setOrderConfirmation(order);
+    /* setOrderConfirmation(order); */
     setCart([]);
     setShowCheckout(false);
     setCartModalOpen(false);

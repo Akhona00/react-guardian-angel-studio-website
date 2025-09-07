@@ -220,29 +220,39 @@ const ServicePage = () => {
     }
 
     function showSlider(type) {
-      if (!listRef.current || !carouselRef.current) return;
-      const sliderItemsDom = listRef.current.querySelectorAll(".item");
-      if (sliderItemsDom.length < 2) return;
-      if (type === "next") {
-        listRef.current.appendChild(sliderItemsDom[0]);
-        carouselRef.current.classList.add("next");
-      } else {
-        listRef.current.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
-        carouselRef.current.classList.add("prev");
-      }
-      clearTimeout(runTimeOut);
-      runTimeOut = setTimeout(() => {
-        if (carouselRef.current) {
-          carouselRef.current.classList.remove("next");
-          carouselRef.current.classList.remove("prev");
-        }
-      }, timeRunning);
-      clearTimeout(runNextAuto);
-      runNextAuto = setTimeout(() => {
-        showSlider("next");
-      }, timeAutoNext);
-      resetTimeAnimation();
+  if (!listRef.current || !carouselRef.current) return;
+
+  // Copy refs to local variables
+  const list = listRef.current;
+  const carousel = carouselRef.current;
+
+  const sliderItemsDom = list.querySelectorAll(".item");
+  if (sliderItemsDom.length < 2) return;
+
+  if (type === "next") {
+    list.appendChild(sliderItemsDom[0]);
+    carousel.classList.add("next");
+  } else {
+    list.prepend(sliderItemsDom[sliderItemsDom.length - 1]);
+    carousel.classList.add("prev");
+  }
+
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    if (carousel) {
+      carousel.classList.remove("next");
+      carousel.classList.remove("prev");
     }
+  }, timeRunning);
+
+  clearTimeout(runNextAuto);
+  runNextAuto = setTimeout(() => {
+    showSlider("next");
+  }, timeAutoNext);
+
+  resetTimeAnimation();
+}
+
 
     // Mouse/touch event handlers
     const handleMouseDown = (e) => {
