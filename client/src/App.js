@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ServicePage from "./pages/ServicePage";
 
 
 function App() {
@@ -24,7 +26,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
-
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/service" element={<ServicePage />} />
       </Routes>
     </Router>
   );
