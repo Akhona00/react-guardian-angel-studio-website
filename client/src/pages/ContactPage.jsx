@@ -176,25 +176,7 @@ const ContactPage = () => {
                 info@guardian-angelstudios.co.za
               </a>
             </li>
-            <li>
-              <i className="fas fa-map-marker-alt"></i>
-              533 Masakhane Street, Mngadi
-              <br />
-              Katlehong, Germiston, 1434
-            </li>
           </ul>
-        </div>
-        <div className="map-container">
-          <iframe
-            src="https://www.google.com/maps?q=533+Masakhane+Street,+Mngadi,+Katlehong,+Germiston,+1434&output=embed"
-            width="100%"
-            height="320"
-            style={{ border: "0" }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Google Map"
-          ></iframe>
         </div>
         <form className="contact-form" onSubmit={handleSubmit}>
           <div className="form-group">
